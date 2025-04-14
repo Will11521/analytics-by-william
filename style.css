@@ -1,4 +1,4 @@
-/* style.css – Final Responsive + Mobile Navbar + Background Fix */
+/* style.css – Final Responsive, Animated, and Mobile-Clean */
 
 html {
     box-sizing: border-box;
@@ -34,11 +34,13 @@ html {
     align-items: center;
     flex-wrap: wrap;
   }
+  
   nav.navbar .nav-links {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
   }
+  
   nav.navbar a {
     color: #00ffe7;
     text-decoration: none;
@@ -48,10 +50,12 @@ html {
     white-space: nowrap;
     transition: all 0.2s ease-in-out;
   }
+  
   nav.navbar a:hover {
     text-decoration: underline;
     color: #ffffff;
   }
+  
   nav .menu-toggle {
     display: none;
     font-size: 24px;
@@ -61,34 +65,24 @@ html {
     cursor: pointer;
   }
   
-  .nav-links {
-    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    overflow: hidden;
-    max-height: 0;
-    opacity: 0;
-    flex-direction: column;
-    width: 100%;
-  }
-  .nav-links.active {
-    max-height: 300px;
-    opacity: 1;
-  }
-  
   header.hero {
     padding: 120px 20px 60px;
     text-align: center;
   }
+  
   .hero-content h1 {
     font-size: 42px;
     color: #00ffe7;
     margin-bottom: 10px;
   }
+  
   .hero-content .tagline {
     font-size: 18px;
     color: #cfcfcf;
     margin-bottom: 10px;
     font-style: italic;
   }
+  
   .hero-content .sub {
     font-size: 18px;
     color: #dddddd;
@@ -104,6 +98,7 @@ html {
     background-color: rgba(15, 17, 26, 0.85);
     border-radius: 8px;
   }
+  
   section h2 {
     color: #00ffe7;
     border-left: 4px solid #00ffe7;
@@ -139,6 +134,7 @@ html {
     display: inline-block;
     transition: background 0.2s ease-in-out;
   }
+  
   .contact a:hover,
   .contact button:hover {
     background-color: #00ffe7;
@@ -178,34 +174,50 @@ html {
       flex-direction: column;
       align-items: flex-start;
     }
+  
     nav.navbar .nav-links {
-      display: none;
-      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
       width: 100%;
+      background-color: rgba(15, 17, 26, 0.95);
+      z-index: 999;
+      flex-direction: column;
+      display: none;
     }
+  
     nav.navbar .nav-links.active {
       display: flex;
     }
+  
     nav.navbar a {
-      margin: 6px 0;
+      padding: 15px 20px;
+      border-top: 1px solid #111;
+      margin: 0;
     }
+  
     nav .menu-toggle {
       display: block;
     }
+  
     .hero-content h1 {
       font-size: 30px;
     }
+  
     .hero-content .sub {
       font-size: 16px;
     }
+  
     section {
       padding: 40px 5vw;
     }
+  
     .float-button {
       bottom: 15px;
       right: 15px;
       padding: 8px 14px;
     }
+  
     .contact form input,
     .contact form textarea,
     .contact form button {

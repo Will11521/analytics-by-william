@@ -9,8 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
-  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8HDD8FC75"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -108,26 +106,31 @@
 
   <a href="mailto:williamjeetsingh2004@gmail.com" class="float-button">📩 Book Now</a>
 
-  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
+
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+
+    function closeMenu() {
+      const navLinks = document.getElementById('navLinks');
+      if (window.innerWidth <= 768) {
+        navLinks.classList.remove('active');
+      }
+    }
+
     function openForm() {
       document.getElementById('popupForm').style.display = 'block';
     }
+
     function showThankYou() {
       setTimeout(() => {
         document.getElementById('thankYouMessage').style.display = 'block';
       }, 200);
       return true;
-    }
-    function toggleMenu() {
-      const navLinks = document.getElementById('navLinks');
-      navLinks.classList.toggle('active');
-    }
-    function closeMenu() {
-      const navLinks = document.getElementById('navLinks');
-      navLinks.classList.remove('active');
     }
   </script>
 
