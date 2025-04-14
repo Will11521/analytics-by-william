@@ -1,4 +1,4 @@
-/* style.css – Elite Responsive Final Version */
+/* style.css – Final Responsive + Mobile Navbar + Background Fix */
 
 html {
     box-sizing: border-box;
@@ -9,7 +9,7 @@ html {
   body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background: url('images/ai-background.png') no-repeat center center fixed;
+    background: linear-gradient(rgba(15,17,26,0.7), rgba(15,17,26,0.7)), url('images/ai-background.png') no-repeat center center;
     background-size: cover;
     color: #f4f4f4;
     line-height: 1.6;
@@ -18,13 +18,7 @@ html {
   }
   
   .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: -1;
+    display: none;
   }
   
   nav.navbar {
@@ -32,7 +26,7 @@ html {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(15, 17, 26, 0.9);
+    background-color: rgba(15, 17, 26, 0.95);
     padding: 15px 20px;
     z-index: 1000;
     display: flex;
@@ -40,7 +34,7 @@ html {
     align-items: center;
     flex-wrap: wrap;
   }
-  nav.navbar div {
+  nav.navbar .nav-links {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -57,6 +51,27 @@ html {
   nav.navbar a:hover {
     text-decoration: underline;
     color: #ffffff;
+  }
+  nav .menu-toggle {
+    display: none;
+    font-size: 24px;
+    color: #00ffe7;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .nav-links {
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    flex-direction: column;
+    width: 100%;
+  }
+  .nav-links.active {
+    max-height: 300px;
+    opacity: 1;
   }
   
   header.hero {
@@ -163,12 +178,19 @@ html {
       flex-direction: column;
       align-items: flex-start;
     }
-    nav.navbar div:last-child {
-      margin-top: 10px;
+    nav.navbar .nav-links {
+      display: none;
       flex-direction: column;
+      width: 100%;
+    }
+    nav.navbar .nav-links.active {
+      display: flex;
     }
     nav.navbar a {
       margin: 6px 0;
+    }
+    nav .menu-toggle {
+      display: block;
     }
     .hero-content h1 {
       font-size: 30px;

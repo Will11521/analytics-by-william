@@ -21,14 +21,13 @@
 </head>
 <body>
 
-  <div class="overlay"></div>
-
   <nav class="navbar">
     <div><strong>Analytics by William</strong></div>
-    <div>
-      <a href="#features">Features</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#contact">Contact</a>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#features" onclick="closeMenu()">Features</a>
+      <a href="#pricing" onclick="closeMenu()">Pricing</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
     </div>
   </nav>
 
@@ -109,6 +108,7 @@
 
   <a href="mailto:williamjeetsingh2004@gmail.com" class="float-button">📩 Book Now</a>
 
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
@@ -121,6 +121,15 @@
       }, 200);
       return true;
     }
+    function toggleMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+    }
+    function closeMenu() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.remove('active');
+    }
   </script>
+
 </body>
 </html>
