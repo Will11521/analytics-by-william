@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Analytics by William</title>
-    <link rel="icon" href="images/favicon.png" type="image/png" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="style.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8HDD8FC75"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-M8HDD8FC75');
-    </script>
-  </head>
-  
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Analytics by William</title>
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8HDD8FC75"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-M8HDD8FC75');
+  </script>
+</head>
 <body>
 
   <div class="overlay"></div>
@@ -91,44 +90,15 @@
       Location: Ottawa / Remote
     </p>
     <button onclick="openForm()">📩 Quick Contact Form</button>
-    <div id="popupForm" style="display:none; background:#0f111a; padding:20px; border:1px solid #00ffe7; border-radius:10px; margin-top:20px;">
+    <div id="popupForm" style="display:none;">
       <h3>Send a Quick Message</h3>
-      <form 
-        action="https://formspree.io/f/mqapjekd" 
-        method="POST" 
-        onsubmit="return showThankYou();" 
-        style="display:flex; flex-direction:column; gap:12px;">
-
-        <input 
-          type="text" 
-          name="name" 
-          placeholder="Your Name" 
-          required 
-          style="padding:12px; border:1px solid #00ffe7; background:#0f111a; color:#f4f4f4; border-radius:6px;" />
-
-        <input 
-          type="email" 
-          name="email" 
-          placeholder="Your Email" 
-          required 
-          style="padding:12px; border:1px solid #00ffe7; background:#0f111a; color:#f4f4f4; border-radius:6px;" />
-
-        <textarea 
-          name="message" 
-          placeholder="Your Message" 
-          required 
-          rows="5"
-          style="padding:12px; border:1px solid #00ffe7; background:#0f111a; color:#f4f4f4; border-radius:6px;"></textarea>
-
-        <button 
-          type="submit"
-          style="padding:12px; background:#00ffe7; color:#0f111a; font-weight:bold; border:none; border-radius:6px; cursor:pointer;">
-          🚀 Send Message
-        </button>
+      <form action="https://formspree.io/f/mqapjekd" method="POST" onsubmit="return showThankYou();">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required rows="5"></textarea>
+        <button type="submit">🚀 Send Message</button>
       </form>
-      <div id="thankYouMessage" style="display:none; margin-top:15px; color:#00ffe7; font-weight:bold;">
-        ✅ Thank you! Your message has been sent.
-      </div>
+      <div id="thankYouMessage" style="display:none;">✅ Thank you! Your message has been sent.</div>
     </div>
   </section>
 
@@ -139,15 +109,12 @@
 
   <a href="mailto:williamjeetsingh2004@gmail.com" class="float-button">📩 Book Now</a>
 
-  <!-- AOS Scroll Library -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init();
-
     function openForm() {
       document.getElementById('popupForm').style.display = 'block';
     }
-
     function showThankYou() {
       setTimeout(() => {
         document.getElementById('thankYouMessage').style.display = 'block';
