@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Analytics by William</title>
+  <link rel="icon" href="images/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+</head>
+<body>
+
+  <div class="overlay"></div>
+
+  <nav class="navbar">
+    <div><strong>Analytics by William</strong></div>
+    <div>
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header class="hero" data-aos="fade-down">
+    <div class="hero-content">
+      <h1>📊 Analytics by William</h1>
+      <p class="tagline">Powered by N.E.R.V.E. – Neural Engine for Reporting, Visuals & Events</p>
+      <p class="sub">Know what’s working on your website — GA4 + GTM + Looker Studio setup in just 2 business days.</p>
+    </div>
+  </header>
+
+  <section class="features" id="features" data-aos="fade-up">
+    <h2>✅ What You’ll Get</h2>
+    <ul>
+      <li>Google Analytics 4 setup (new or upgraded)</li>
+      <li>Google Tag Manager integration</li>
+      <li>Real-time event tracking: Pageviews, Scrolls, Clicks, Forms</li>
+      <li>Custom Looker Studio dashboard</li>
+      <li>PDF export version for reports</li>
+      <li>Optional monthly summary tracking</li>
+    </ul>
+  </section>
+
+  <section class="how-it-works" data-aos="fade-right">
+    <h2>🔧 How It Works</h2>
+    <ol>
+      <li>Book your setup</li>
+      <li>I connect your site to GA4 and GTM</li>
+      <li>We define and track key events</li>
+      <li>You receive a custom dashboard + sharable link</li>
+      <li>Optional monthly reporting available</li>
+    </ol>
+    <p><strong>Delivery time:</strong> 2 business days<br>
+    <strong>Location:</strong> Based in Ottawa – remote friendly</p>
+  </section>
+
+  <section class="pricing" id="pricing" data-aos="fade-left">
+    <h2>💰 Pricing</h2>
+    <p><strong>Starter Package – $350 CAD</strong></p>
+    <ul>
+      <li>GA4 + GTM setup</li>
+      <li>1 full dashboard</li>
+      <li>2 custom event trackers</li>
+    </ul>
+    <p><strong>Add-On:</strong><br>
+    📄 Monthly PDF Report – $89/month</p>
+  </section>
+
+  <section class="preview" data-aos="zoom-in">
+    <h2>📸 Dashboard Preview</h2>
+    <img src="images/Dashboard.jpg" alt="Dashboard Screenshot" class="dashboard-img" />
+  </section>
+
+  <section class="contact" id="contact" data-aos="fade-up">
+    <h2>📞 Book Your Setup</h2>
+    <p>
+      Email: <a href="mailto:williamjeetsingh2004@gmail.com">williamjeetsingh2004@gmail.com</a><br/>
+      Phone: <a href="tel:+14378721500">+1 (437) 872-1500</a><br/>
+      Location: Ottawa / Remote
+    </p>
+    <button onclick="openForm()">📩 Quick Contact Form</button>
+    <div id="popupForm" style="display:none; background:#0f111a; padding:20px; border:1px solid #00ffe7; border-radius:10px; margin-top:20px;">
+      <h3>Send a Quick Message</h3>
+      <form 
+        action="https://formspree.io/f/mqapjekd" 
+        method="POST" 
+        onsubmit="return showThankYou();" 
+        style="display:flex; flex-direction:column; gap:12px;">
+
+        <input 
+          type="text" 
+          name="name" 
+          placeholder="Your Name" 
+          required 
+          style="padding:12px; border:1px solid #00ffe7; background:#0f111a; color:#f4f4f4; border-radius:6px;" />
+
+        <input 
+          type="email" 
+          name="email" 
+          placeholder="Your Email" 
+          required 
+          style="padding:12px; border:1px solid #00ffe7; background:#0f111a; color:#f4f4f4; border-radius:6px;" />
+
+        <textarea 
+          name="message" 
+          placeholder="Your Message" 
+          required 
+          rows="5"
+          style="padding:12px; border:1px solid #00ffe7; background:#0f111a; color:#f4f4f4; border-radius:6px;"></textarea>
+
+        <button 
+          type="submit"
+          style="padding:12px; background:#00ffe7; color:#0f111a; font-weight:bold; border:none; border-radius:6px; cursor:pointer;">
+          🚀 Send Message
+        </button>
+      </form>
+      <div id="thankYouMessage" style="display:none; margin-top:15px; color:#00ffe7; font-weight:bold;">
+        ✅ Thank you! Your message has been sent.
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Designed & Delivered by Williamjeet Singh<br>
+    Powered by N.E.R.V.E. | 2025</p>
+  </footer>
+
+  <a href="mailto:williamjeetsingh2004@gmail.com" class="float-button">📩 Book Now</a>
+
+  <!-- AOS Scroll Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function openForm() {
+      document.getElementById('popupForm').style.display = 'block';
+    }
+
+    function showThankYou() {
+      setTimeout(() => {
+        document.getElementById('thankYouMessage').style.display = 'block';
+      }, 200);
+      return true;
+    }
+  </script>
+</body>
+</html>
