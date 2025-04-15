@@ -1,227 +1,265 @@
 /* style.css – Final Responsive, Animated, and Mobile-Clean */
 
 html {
-    box-sizing: border-box;
-  }
-  *, *:before, *:after {
-    box-sizing: inherit;
-  }
-  body {
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(rgba(15,17,26,0.7), rgba(15,17,26,0.7)), url('images/ai-background.png') no-repeat center center;
-    background-size: cover;
-    color: #f4f4f4;
-    line-height: 1.6;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-  }
-  
-  .overlay {
-    display: none;
-  }
-  
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(rgba(15,17,26,0.7), rgba(15,17,26,0.7)), url('images/ai-background.png') no-repeat center center;
+  background-size: cover;
+  color: #f4f4f4;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+nav.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(15, 17, 26, 0.95);
+  padding: 15px 20px;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav.navbar .nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+nav.navbar a {
+  color: #00ffe7;
+  text-decoration: none;
+  margin: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  white-space: nowrap;
+  transition: all 0.2s ease-in-out;
+}
+nav.navbar a:hover {
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+nav .menu-toggle {
+  display: none;
+  font-size: 24px;
+  color: #00ffe7;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* === Hero Section === */
+header.hero {
+  padding: 120px 20px 60px;
+  text-align: center;
+}
+.hero-content h1 {
+  font-size: 42px;
+  color: #00ffe7;
+  margin-bottom: 10px;
+}
+.hero-content .tagline {
+  font-size: 18px;
+  color: #cfcfcf;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+.hero-content .sub {
+  font-size: 18px;
+  color: #dddddd;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* === Hero CTA Button === */
+.audit-cta {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 28px;
+  background-color: #00ffe7;
+  color: #0f111a;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 0 18px rgba(0, 255, 231, 0.4);
+  transition: background 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+.audit-cta:hover {
+  background-color: #ffffff;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* === Section Layout === */
+section {
+  padding: 60px 5vw;
+  max-width: 1000px;
+  margin: 40px auto;
+  border-bottom: 1px solid #222;
+  background-color: rgba(15, 17, 26, 0.85);
+  border-radius: 8px;
+}
+section h2 {
+  color: #00ffe7;
+  border-left: 4px solid #00ffe7;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+ul, ol {
+  padding-left: 20px;
+}
+li {
+  margin-bottom: 10px;
+}
+
+/* === Dashboard Image Preview === */
+.preview img.dashboard-img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 255, 231, 0.2);
+  margin-top: 10px;
+}
+/* === Calendly Embed Section === */
+.calendly {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px 5vw;
+  text-align: center;
+  background-color: rgba(15, 17, 26, 0.85);
+  border-radius: 8px;
+}
+.calendly h2 {
+  color: #00ffe7;
+  margin-bottom: 10px;
+}
+.calendly p {
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+/* === Contact Buttons & Inputs === */
+.contact a,
+.contact button {
+  color: #00ffe7;
+  background: none;
+  border: 2px solid #00ffe7;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  transition: background 0.2s ease-in-out;
+}
+.contact a:hover,
+.contact button:hover {
+  background-color: #00ffe7;
+  color: #0f111a;
+}
+
+/* === Footer === */
+footer.footer {
+  background-color: #1a1a2e;
+  color: #999;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  border-top: 1px solid #222;
+}
+
+/* === Floating Button === */
+.float-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #00ffe7;
+  color: #0f111a;
+  padding: 10px 16px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 0 15px rgba(0, 255, 231, 0.4);
+  text-decoration: none;
+  z-index: 9999;
+  transition: transform 0.2s ease-in-out;
+}
+.float-button:hover {
+  transform: scale(1.05);
+}
+
+/* === Mobile Optimization === */
+@media (max-width: 768px) {
   nav.navbar {
-    position: fixed;
-    top: 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav.navbar .nav-links {
+    position: absolute;
+    top: 60px;
     left: 0;
     width: 100%;
     background-color: rgba(15, 17, 26, 0.95);
-    padding: 15px 20px;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  
-  nav.navbar .nav-links {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-  
-  nav.navbar a {
-    color: #00ffe7;
-    text-decoration: none;
-    margin: 8px;
-    font-weight: bold;
-    font-size: 16px;
-    white-space: nowrap;
-    transition: all 0.2s ease-in-out;
-  }
-  
-  nav.navbar a:hover {
-    text-decoration: underline;
-    color: #ffffff;
-  }
-  
-  nav .menu-toggle {
+    z-index: 999;
+    flex-direction: column;
     display: none;
-    font-size: 24px;
-    color: #00ffe7;
-    background: none;
-    border: none;
-    cursor: pointer;
   }
-  
-  header.hero {
-    padding: 120px 20px 60px;
-    text-align: center;
+  nav.navbar .nav-links.active {
+    display: flex;
   }
-  
+  nav.navbar a {
+    padding: 15px 20px;
+    border-top: 1px solid #111;
+    margin: 0;
+  }
+  nav .menu-toggle {
+    display: block;
+  }
+
   .hero-content h1 {
-    font-size: 42px;
-    color: #00ffe7;
-    margin-bottom: 10px;
+    font-size: 30px;
   }
-  
-  .hero-content .tagline {
-    font-size: 18px;
-    color: #cfcfcf;
-    margin-bottom: 10px;
-    font-style: italic;
-  }
-  
   .hero-content .sub {
-    font-size: 18px;
-    color: #dddddd;
-    max-width: 90%;
-    margin: 0 auto;
-  }
-  
-  section {
-    padding: 60px 5vw;
-    max-width: 1000px;
-    margin: 40px auto;
-    border-bottom: 1px solid #222;
-    background-color: rgba(15, 17, 26, 0.85);
-    border-radius: 8px;
-  }
-  
-  section h2 {
-    color: #00ffe7;
-    border-left: 4px solid #00ffe7;
-    padding-left: 10px;
-    margin-bottom: 20px;
-  }
-  
-  ul, ol {
-    padding-left: 20px;
-  }
-  li {
-    margin-bottom: 10px;
-  }
-  
-  .preview img.dashboard-img {
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 0 15px rgba(0, 255, 231, 0.2);
-    margin-top: 10px;
-  }
-  
-  .contact a,
-  .contact button {
-    color: #00ffe7;
-    background: none;
-    border: 2px solid #00ffe7;
-    padding: 10px 20px;
-    margin-top: 10px;
-    border-radius: 8px;
-    cursor: pointer;
     font-size: 16px;
-    font-weight: bold;
-    display: inline-block;
-    transition: background 0.2s ease-in-out;
   }
-  
-  .contact a:hover,
-  .contact button:hover {
-    background-color: #00ffe7;
-    color: #0f111a;
+
+  section {
+    padding: 40px 5vw;
   }
-  
-  footer.footer {
-    background-color: #1a1a2e;
-    color: #999;
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
-    border-top: 1px solid #222;
-  }
-  
+
   .float-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #00ffe7;
-    color: #0f111a;
-    padding: 10px 16px;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 14px;
-    box-shadow: 0 0 15px rgba(0, 255, 231, 0.4);
-    text-decoration: none;
-    z-index: 9999;
-    transition: transform 0.2s ease-in-out;
+    bottom: 15px;
+    right: 15px;
+    padding: 8px 14px;
   }
-  .float-button:hover {
-    transform: scale(1.05);
+
+  .contact form input,
+  .contact form textarea,
+  .contact form button {
+    width: 100%;
   }
-  
-  @media (max-width: 768px) {
-    nav.navbar {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    nav.navbar .nav-links {
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background-color: rgba(15, 17, 26, 0.95);
-      z-index: 999;
-      flex-direction: column;
-      display: none;
-    }
-  
-    nav.navbar .nav-links.active {
-      display: flex;
-    }
-  
-    nav.navbar a {
-      padding: 15px 20px;
-      border-top: 1px solid #111;
-      margin: 0;
-    }
-  
-    nav .menu-toggle {
-      display: block;
-    }
-  
-    .hero-content h1 {
-      font-size: 30px;
-    }
-  
-    .hero-content .sub {
-      font-size: 16px;
-    }
-  
-    section {
-      padding: 40px 5vw;
-    }
-  
-    .float-button {
-      bottom: 15px;
-      right: 15px;
-      padding: 8px 14px;
-    }
-  
-    .contact form input,
-    .contact form textarea,
-    .contact form button {
-      width: 100%;
-    }
+
+  .audit-cta {
+    font-size: 15px;
+    padding: 12px 24px;
+    width: 90%;
   }
-  
+
+
+  .calendly {
+    padding: 30px 5vw;
+  }
+}
