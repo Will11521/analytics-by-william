@@ -1,5 +1,4 @@
-/* style.css – Fully Optimized and Mobile-Ready */
-
+/* Base Reset */
 html {
   box-sizing: border-box;
 }
@@ -58,7 +57,7 @@ nav .menu-toggle {
   cursor: pointer;
 }
 
-/* Hero */
+/* Hero Section */
 header.hero {
   padding: 120px 20px 60px;
   text-align: center;
@@ -80,8 +79,6 @@ header.hero {
   max-width: 90%;
   margin: 0 auto;
 }
-
-/* Hero CTA Button */
 .audit-cta {
   display: inline-block;
   margin-top: 25px;
@@ -101,12 +98,71 @@ header.hero {
   transform: scale(1.05);
 }
 
-/* Sections */
-section {
+/* Value Strip Section */
+.value-strip {
+  background: #101218;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #222;
+  padding: 15px 5vw;
+  text-align: center;
+}
+.value-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  font-size: 16px;
+  color: #eee;
+}
+@media (max-width: 768px) {
+  .value-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Offer Section */
+.offer-section {
+  padding: 60px 5vw;
+  background-color: rgba(15, 17, 26, 0.85);
+  border-radius: 8px;
+  margin: 40px auto;
+  max-width: 1200px;
+}
+.offer-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.offer-box {
+  flex: 1 1 450px;
+  background-color: rgba(20, 22, 32, 0.9);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0, 255, 231, 0.1);
+}
+.offer-box h2 {
+  color: #00ffe7;
+  margin-bottom: 20px;
+  border-left: 4px solid #00ffe7;
+  padding-left: 10px;
+}
+.offer-box ul,
+.offer-box ol {
+  color: #f4f4f4;
+  font-size: 16px;
+  padding-left: 20px;
+}
+.offer-box li {
+  margin-bottom: 10px;
+}
+
+/* Pricing Section */
+section.pricing {
   padding: 60px 5vw;
   max-width: 1000px;
   margin: 40px auto;
-  border-bottom: 1px solid #222;
   background-color: rgba(15, 17, 26, 0.85);
   border-radius: 8px;
 }
@@ -116,14 +172,14 @@ section h2 {
   padding-left: 10px;
   margin-bottom: 20px;
 }
-ul, ol {
+ul {
   padding-left: 20px;
 }
 li {
   margin-bottom: 10px;
 }
 
-/* Dashboard Preview */
+/* Preview Section */
 .preview img.dashboard-img {
   width: 100%;
   border-radius: 8px;
@@ -131,27 +187,7 @@ li {
   margin-top: 10px;
 }
 
-/* Schedule Now Button (Calendly) */
-.schedule-cta {
-  display: inline-block;
-  margin-bottom: 30px;
-  padding: 12px 26px;
-  background-color: #00ffe7;
-  color: #0f111a;
-  font-size: 16px;
-  font-weight: bold;
-  border-radius: 8px;
-  text-decoration: none;
-  box-shadow: 0 0 14px rgba(0, 255, 231, 0.4);
-  transition: transform 0.2s ease-in-out;
-}
-.schedule-cta:hover {
-  background-color: #ffffff;
-  color: #000;
-  transform: scale(1.05);
-}
-
-/* Calendly Embed */
+/* Calendly Section */
 .calendly {
   max-width: 900px;
   margin: 60px auto;
@@ -168,26 +204,50 @@ li {
   color: #ccc;
   margin-bottom: 20px;
 }
-
-/* Contact Form */
-.contact a,
-.contact button {
-  color: #00ffe7;
-  background: none;
-  border: 2px solid #00ffe7;
-  padding: 10px 20px;
-  margin-top: 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
+.schedule-cta {
   display: inline-block;
-  transition: background 0.2s ease-in-out;
-}
-.contact a:hover,
-.contact button:hover {
+  padding: 12px 24px;
   background-color: #00ffe7;
   color: #0f111a;
+  font-weight: bold;
+  border-radius: 10px;
+  text-decoration: none;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 255, 231, 0.3);
+  transition: all 0.2s ease-in-out;
+}
+.schedule-cta:hover {
+  background-color: #fff;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* Contact */
+.contact {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px 5vw;
+  text-align: center;
+  background-color: rgba(15, 17, 26, 0.85);
+  border-radius: 8px;
+}
+.contact-cta {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 24px;
+  background-color: #00ffe7;
+  color: #0f111a;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 0 10px rgba(0, 255, 231, 0.3);
+  transition: all 0.2s ease-in-out;
+}
+.contact-cta:hover {
+  background-color: #ffffff;
+  color: #000;
+  transform: scale(1.05);
 }
 
 /* Footer */
@@ -200,7 +260,7 @@ footer.footer {
   border-top: 1px solid #222;
 }
 
-/* Floating Button */
+/* Floating CTA Button */
 .float-button {
   position: fixed;
   bottom: 20px;
@@ -220,7 +280,7 @@ footer.footer {
   transform: scale(1.05);
 }
 
-/* Mobile Optimization */
+/* Mobile Styles */
 @media (max-width: 768px) {
   nav.navbar {
     flex-direction: column;
@@ -247,38 +307,23 @@ footer.footer {
   nav .menu-toggle {
     display: block;
   }
-
   .hero-content h1 {
     font-size: 30px;
   }
   .hero-content .sub {
     font-size: 16px;
   }
-
   section {
     padding: 40px 5vw;
   }
-
   .float-button {
     bottom: 15px;
     right: 15px;
     padding: 8px 14px;
   }
-
-  .contact form input,
-  .contact form textarea,
-  .contact form button {
-    width: 100%;
-  }
-
-  .audit-cta,
-  .schedule-cta {
+  .audit-cta {
     font-size: 15px;
-    padding: 10px 22px;
+    padding: 12px 24px;
     width: 90%;
-  }
-
-  #calendly-widget {
-    height: 550px !important;
   }
 }
